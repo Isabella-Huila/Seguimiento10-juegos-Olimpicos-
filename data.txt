@@ -1,0 +1,1 @@
+[{"name":"Colombia","silver":0,"gold":8,"bronze":0,"totalMedals":8},{"name":"Ecuador","silver":6,"gold":0,"bronze":0,"totalMedals":6},{"name":"Alemania","silver":0,"gold":0,"bronze":7,"totalMedals":7}]
