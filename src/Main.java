@@ -31,7 +31,6 @@ public class Main {
                     case 0:
                         System.out.println("Thank you for using this app :)");
                         System.exit(0);
-
                         break;
 
                     default:

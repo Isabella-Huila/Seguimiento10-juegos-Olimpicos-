@@ -100,5 +100,4 @@ public class Country  implements  Comparable<Country> {
             return criterionOne;
         }
 
-    }
-}
+    }}

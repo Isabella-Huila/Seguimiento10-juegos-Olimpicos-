@@ -6,19 +6,9 @@ public class CountryList {
 
     private ArrayList<Country> countries;
     static String path= "data.txt";
-
     public CountryList() {
         this.countries = new ArrayList<>();
     }
-
-    public ArrayList<Country> getCountries() {
-        return countries;
-    }
-
-    public void setCountries(ArrayList<Country> countries) {
-        this.countries = countries;
-    }
-
     public void save() throws IOException{
         File file= new File(path);
         FileOutputStream fos=new FileOutputStream(file);
@@ -31,7 +21,6 @@ public class CountryList {
         writer.flush();
         fos.close();
     }
-
     public void load()throws IOException{
         File file= new File(path);
         if (file.exists()){
@@ -51,7 +40,6 @@ public class CountryList {
             file.createNewFile();
         }
     }
-
     public void addCountry(String[] date) throws IOException {
 
         Country searched = null;
@@ -61,7 +49,6 @@ public class CountryList {
                 searched = current;
             }
         }
-
         if(searched!=null) {
             searched.addMedals(date[1] , Integer.parseInt(date[2]));
 
@@ -69,17 +56,13 @@ public class CountryList {
             Country newCountry= new Country(date[0]);
             newCountry.addMedals(date[1], Integer.parseInt(date[2]));
             countries.add(newCountry);
-
         }
-
         save();
     }
-
     public void showMedals(){
         Collections.sort(countries);
         printMedals();
     }
-
     public void totalMedals(){
         Collections.sort(countries, (a,b)-> {
             int criterionOne= b.getTotalMedals() - a.getTotalMedals();
@@ -94,8 +77,6 @@ public class CountryList {
             System.out.println( country.getName()+" " + "Total Medals: " + country.getTotalMedals());
         });
     }
-
-
     public void insertionSort(){
         for(int i=1;i < countries.size();i++){
 
@@ -114,21 +95,16 @@ public class CountryList {
         }
         printCountrys();
     }
-
     public void printMedals(){
         System.out.println("------------[Medals]---------------\n");
         countries.forEach(country -> {
             System.out.println( country.getName()+ " " + "Gold: " + country.getGold() + " "+ "Silver: " + country.getSilver()+" "+ "Bronze: " +country.getBronze());
         });
     }
-
     public void printCountrys(){
         System.out.println("------------[Countrys]---------------\n");
         countries.forEach(country -> {
             System.out.println(country.getName());
         });
 
-    }
-
-
-}
+    }}
